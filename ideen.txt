@@ -1,0 +1,21 @@
+C Programmierung:
+
+1. Hallo Welt: Schreiben Sie das klassische "Hallo Welt"-Programm in C, um sich mit der Grundsyntax vertraut zu machen.
+
+2. Rechner: Erstellen Sie einen einfachen Taschenrechner, der Benutzereingaben für mathematische Operationen akzeptiert und das Ergebnis ausgibt.
+
+3. Faktorielle Berechnung: Schreiben Sie ein Programm, das die Fakultät einer vom Benutzer eingegebenen Zahl berechnet.
+
+4. Primzahlen: Entwickeln Sie ein Programm, das alle Primzahlen bis zu einer vom Benutzer eingegebenen Grenze ausgibt.
+
+5. Textbasiertes Spiel: Erstellen Sie ein textbasiertes Spiel wie Tic-Tac-Toe oder Hangman, um mehr über die Verwendung von Schleifen und bedingten Anweisungen zu lernen.
+
+6. Dateiverarbeitung: Üben Sie die Verarbeitung von Dateien, indem Sie ein Programm schreiben, das Daten aus einer Textdatei liest, sie analysiert und möglicherweise transformiert.
+
+7. Datenbankmanagementsystem: Dies ist ein fortgeschrittenes Projekt. Versuchen Sie, ein einfaches Datenbankmanagementsystem zu erstellen, das CRUD-Operationen (Erstellen, Lesen, Aktualisieren, Löschen) für Datensätze unterstützt.
+
+8. Mini-Betriebssystem: Wenn Sie eine echte Herausforderung suchen, versuchen Sie, ein minimales Betriebssystem oder einen Kernel in C zu entwickeln. Dies erfordert ein tiefes Verständnis von Betriebssystemkonzepten.
+
+9. Compilerbau: Wenn Sie sich für Compiler und Sprachdesign interessieren, versuchen Sie, einen einfachen Compiler für eine kleine Sprache zu erstellen. Dies ist ein sehr anspruchsvolles Projekt.
+
+10. OpenGL-Anwendung: Erstellen Sie eine 2D- oder 3D-Grafikanwendung unter Verwendung von OpenGL und C, um Ihre Kenntnisse in der Spieleentwicklung oder Grafikprogrammierung zu erweitern.
