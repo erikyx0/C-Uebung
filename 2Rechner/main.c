@@ -5,12 +5,16 @@ int main (){
     char op;
     printf("Taschenrechner: \n");
 
+
     printf("Zahl Eins: ");
     scanf("%lf", &x);
+    
+    while (getchar() != '\n'); // wartet auf einen Operator welcher nicht \n
     printf("Operator: ");
     scanf("%c", &op);
-    // printf("Zahl Zwei: ");
-    // scanf("%lf", &y);
+
+    printf("Zahl Zwei: ");
+    scanf("%lf", &y);
 
     switch (op)
     {
