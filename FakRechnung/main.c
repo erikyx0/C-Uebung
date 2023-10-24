@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 int main(){
     /*
     int x=0, y=0, z=0;
@@ -13,25 +12,24 @@ int main(){
     }
     printf("X: %i", z);
     */
-    int hel[2];
-    int c = 0;
-    int d = 0;
+    int a[] = {1,2,3,4,5};
+    int b = 3;
+    int *p;
+    p = &b;
 
-    for (int i=0; i<=1000; i++ ){
-        printf("pos: %i", i);
-        if (hel[i] == 0) {
-            printf("--> 0");
-            c++;
-        }
-        if (hel[i] == 2) {
-            printf("--> 1");
-            d++;
-        }
-        printf("\n");
+    for (int i=0; i<5; i++){
+        printf("%p\n",a[i] );
     }
-    printf("%i 0 were found!!\n", c);
-    printf("%i 1 were found!!", d);
 
-    //printf("Durchschnitt: %i", sizeof(hel));
+    
+    printf("%p\n", p);
+    printf("%p\n", &b);
+    printf("%d", p);
+    //pint_funk(a);
     return 0;
+
+}
+
+void pint_funk(int *array){
+    printf("%p", array);
 }
