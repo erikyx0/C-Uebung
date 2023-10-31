@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 int main(){
     /*
     int x=0, y=0, z=0;
@@ -12,24 +13,12 @@ int main(){
     }
     printf("X: %i", z);
     */
-    int a[] = {1,2,3,4,5};
-    int b = 3;
-    int *p;
-    p = &b;
 
-    for (int i=0; i<5; i++){
-        printf("%p\n",a[i] );
+    int *a;
+    a = malloc(sizeof(int)*100);
+    for (int i=0; i<100; i++){
+        printf("a[%d] = %d\n", i, a[i]);
     }
-
-    
-    printf("%p\n", p);
-    printf("%p\n", &b);
-    printf("%d", p);
-    //pint_funk(a);
-    return 0;
-
-}
-
-void pint_funk(int *array){
-    printf("%p", array);
+    free(a); 
+   return 0;
 }
