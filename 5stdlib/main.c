@@ -27,7 +27,6 @@ int main(){
         printf("\nInvalid Syntax!\n\n"); break;
     }
 
-    
     }while(choice != 'e');
 
     free(numbers); printf("logging out!....\n");
@@ -48,8 +47,6 @@ int save(int *Snumbers, int *Ssize, int count){
 
         if (num != -1) {Snumbers[count] = num; count++;}
         
-        
-
     }while(num != -1);
 
     printf("count:%d and Ssize:%d\n", count, *Ssize);
