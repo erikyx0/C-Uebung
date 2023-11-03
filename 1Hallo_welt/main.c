@@ -28,7 +28,6 @@ int main(){
             x++;
         }
         if (x!=0) printf("Try again!\n"); 
-        printf("%d", x);
         
     }while(result2 == 1 || result == 1);
 
