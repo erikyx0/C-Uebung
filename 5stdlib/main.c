@@ -3,6 +3,7 @@
 int save(int *Snumbers, int *size, int count);
 void view(int *Vnumbers, int *size);
 void order(int *Onumbers, int *Osize);
+
 int main(){
     char choice;
     int *numbers; 
