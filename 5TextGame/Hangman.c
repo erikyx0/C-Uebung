@@ -5,27 +5,24 @@
 
 int main(){
     char word[20]; char guess;
-    int wordlength = 0;
-    int maxFail = 0;
-    int correctguess = 0;
+    int wordlength = 0, maxFail = 0, correctguess = 0;
     bool included = false, schongeraten = false;
 
-    int *geratendeBS = malloc(sizeof(char) * 1);
+    int *geratendeBS = calloc(1 ,sizeof(char));
 
     printf("Welches Wort: "); scanf("%s", word);
     for (int i=0; word[i] != 0; i++){wordlength++;printf("*");} printf("\n");
 
     while (correctguess<wordlength && maxFail<3)
     {
-
-        int wordlengthTry=0;
+        schongeraten = false;
         printf("Char: "); while(getchar() != '\n'); scanf("%c", &guess);
 
         for(int a=0; a < 10; a++){
             if (guess == geratendeBS[a]){
                 printf("Schon geraten! raten etwas Anders!\n");
                 schongeraten = true;
-            }else {schongeraten = false;}
+            }
         }
 
         if (schongeraten == false){
@@ -37,13 +34,18 @@ int main(){
             }
 
             if (included == true){
-                correctguess++;
-                printf("Richtig!\n");
-            }else {
-                if (maxFail>1){
+                if (correctguess>1){
                     geratendeBS = realloc(geratendeBS, sizeof(char)*(maxFail+1));
                 }
-                geratendeBS[maxFail] = guess;
+                geratendeBS[correctguess] = guess;
+                
+                for (int i=0; i <wordlength; i++){
+                    if (guess == word[i]){
+                        correctguess++;
+                    }
+                }
+                printf("Richtig! Anzahl der korrekt geratende BS: %d\n", correctguess);
+            }else {
                 maxFail++;
                 printf("Falsch\n");
             }
@@ -51,8 +53,10 @@ int main(){
 
         
     }
-    if (correctguess == wordlength) printf("Gewonnen :)\n");
-    else printf("Fail :(\n");
 
+    if (correctguess == wordlength) printf("Gewonnen :)\n");
+    else printf("\nFail :(\n");
+
+    free(geratendeBS); 
     return 0;
 }
