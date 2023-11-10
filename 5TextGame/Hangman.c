@@ -11,6 +11,7 @@ int main(){
 
     printf("Welches Wort: "); scanf("%s", word);
     for (int i=0; word[i] != 0; i++){wordlength++;printf("*");} printf("\n");
+    system("clear");
 
     char *posWord = calloc(wordlength, sizeof(char));
 
