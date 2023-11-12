@@ -2,16 +2,24 @@
 #include <string.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#define sizeofword 32
 
-int main(){
-    char word[20]; char guess; 
+int main(int argc, char *argv[]){
+    char guess; 
     int wordlength = 0, maxFail = 0, correctguess = 0;
     bool included = false, schongeraten = false;
     char *geratendeBS = calloc(1 ,sizeof(char));
 
-    printf("Welches Wort: "); scanf("%s", word);
-    for (int i=0; word[i] != 0; i++){wordlength++;printf("*");} printf("\n");
-    system("clear");
+    FILE *file;
+    file = fopen("list.txt", "r");
+    char word[sizeofword];
+    int number = atoi(argv[1]);
+
+    for (int i=0; i<=number; i++){
+        fgets(word, sizeofword, file);
+    }
+    for (int i=0; word[i] != 0; i++){wordlength++; printf("*");} printf("\n");
+    //system("clear");
 
     char *posWord = calloc(wordlength, sizeof(char));
 
@@ -79,6 +87,6 @@ int main(){
     if (correctguess == wordlength) printf("\nGewonnen :)\n");
     else printf("\nFail :(\n");
 
-    free(geratendeBS); free(posWord);
+    free(geratendeBS); free(posWord); 
     return 0;
 }

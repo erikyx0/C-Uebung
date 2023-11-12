@@ -1,13 +1,25 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int funk(int a, int b){
-    return a+b;
-}
-int main(void){
-    int a=0, b=0;
-    printf("Zahl1: "); scanf("%i", &a);
-    printf("Zahl2: "); scanf("%i", &b);
+#define sizeofword 16
+int main(int argc, char *argv[]){
 
-    printf("%i + %i = %i", a, b, funk(a,b));
+    //printf("%d\n", argc);
+    FILE *file;
+    file = fopen("list.txt", "r");
+    char word[sizeofword];
+
+    int number = atoi(argv[1]);
+    for (int i=0; i<number; i++){
+       fgets(word, sizeofword, file);
+    }
+    printf("word: %s", word);
+
+    for (int i=1; i!=; i++){
+        printf("%c\n", word[i-1]);
+    }
+
+
+    fclose(file);
     return 0;
 }
