@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include <stdlib.h>
+#include <ctype.h>
 #define sizeofword 32
 
 int main(int argc, char *argv[]){
@@ -9,6 +10,7 @@ int main(int argc, char *argv[]){
     int wordlength = 0, maxFail = 0, correctguess = 0;
     bool included = false, schongeraten = false;
     char *geratendeBS = calloc(1 ,sizeof(char));
+    
 
     FILE *file;
     file = fopen("list.txt", "r");
@@ -18,16 +20,22 @@ int main(int argc, char *argv[]){
     for (int i=0; i<=number; i++){
         fgets(word, sizeofword, file);
     }
-    for (int i=0; word[i] != 0; i++){wordlength++; printf("*");} printf("\n");
-    //system("clear");
 
+    word[0] = tolower(word[0]);
+
+    system("clear");
+    for (int i=1; word[i] != 0; i++){
+        wordlength++; printf("*");
+    }
+     printf("\n");
+    
+    
     char *posWord = calloc(wordlength, sizeof(char));
-
 
     while (correctguess<wordlength && maxFail<3)
     {
         schongeraten = false;
-        printf("\nChar: "); while(getchar() != '\n'); scanf("%c", &guess);
+        printf("\nChar: ");  scanf("%c", &guess); while(getchar() != '\n');
 
         for(int a=0; a < 10; a++){
             if (guess == geratendeBS[a]){
@@ -85,7 +93,7 @@ int main(int argc, char *argv[]){
     }
 
     if (correctguess == wordlength) printf("\nGewonnen :)\n");
-    else printf("\nFail :(\n");
+    else printf("\nFail :(  -> %s\n", word);
 
     free(geratendeBS); free(posWord); 
     return 0;
