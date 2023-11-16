@@ -7,6 +7,7 @@ int main(){
     char pname[] = "tool";
     char pnametry[100];
     int result, result2;
+    
     do {
         
         int x=0;

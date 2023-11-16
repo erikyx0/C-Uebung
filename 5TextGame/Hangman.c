@@ -24,6 +24,7 @@ int main(int argc, char *argv[]){
     word[0] = tolower(word[0]);
 
     system("clear");
+
     for (int i=1; word[i] != 0; i++){
         wordlength++; printf("*");
     }
