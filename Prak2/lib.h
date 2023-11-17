@@ -1,7 +1,6 @@
-#ifndef COURSE_H
-#define COURSE_H
+#pragma once
 
 int add(int a, int b);
 
-#endif
+
 
