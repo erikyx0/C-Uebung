@@ -7,7 +7,7 @@
 static bool quit = false;
 
 struct {
-    int width;
+    int width ;
     int height;
     uint32_t *pixels;
 } frame = {0};
@@ -71,7 +71,7 @@ LRESULT CALLBACK WindowProcessMessage(HWND window_handle, UINT message, WPARAM w
             device_context = BeginPaint(window_handle, &paint);
             BitBlt(device_context,
                    paint.rcPaint.left, paint.rcPaint.top,
-                   paint.rcPaint.right - paint.rcPaint.left, 200 - 100,
+                   paint.rcPaint.right - paint.rcPaint.left, paint.rcPaint.bottom - paint.rcPaint.top,
                    frame_device_context,
                    paint.rcPaint.left, paint.rcPaint.top,
                    SRCCOPY);

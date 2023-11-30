@@ -1,5 +1,4 @@
 @startuml
 
-funk ben 
 ben -> weckend
 @enduml

@@ -35,6 +35,8 @@ int main(){
     printf("radius: "); scanf("%d", &r);
     double (*planetchoice)(int) = planet();
 
+
+
     printf("%lf\n",planetchoice(r));
     return 0;
 }
