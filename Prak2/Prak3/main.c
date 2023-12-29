@@ -46,8 +46,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, PSTR pCmdLine, 
         static MSG message = { 0 };
         while(PeekMessage(&message, NULL, 0, 0, PM_REMOVE)) { DispatchMessage(&message); }
 
-        static unsigned int p = 0;
-        frame.pixels[(p++)%(frame.width*frame.height)] = Rand32();
+       
+        frame.pixels[(p++)%(frame.width*frame.height)] = 0x0000;
         frame.pixels[Rand32()%(frame.width*frame.height)] = 0;
 
         InvalidateRect(window_handle, NULL, FALSE);

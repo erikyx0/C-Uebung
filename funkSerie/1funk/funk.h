@@ -1,0 +1,1 @@
+void draw_rec(int x, int y);

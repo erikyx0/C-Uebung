@@ -53,13 +53,30 @@ int drawing(double Xval[], double Yval[], int ValAmount, double *minmaxvalues, d
 
     double Xgetmaxtoratio = 900 / (minmaxvalues[0] - minmaxvalues[2]);
     double Ygetmaxtoratio = 600 / (minmaxvalues[1] - minmaxvalues[3]);
-
+    
+    int y1 = (((drawLineAverage[0]*minmaxvalues[3]) - minmaxvalues[3]) + drawLineAverage[1])*Ygetmaxtoratio;
+    int y2 = (((drawLineAverage[0]*minmaxvalues[1]) - minmaxvalues[3]) + drawLineAverage[1])*Ygetmaxtoratio;
+    int y1true = GetScreenHeight() - y1 - offset;
+    int y2true = GetScreenHeight() - y2 - offset;
+    
+    int trueXvalue = GetScreenWidth()-offset;
+    printf("comair Extern: %d\n", GetScreenHeight()-offset);
+    printf("y2true Extern: %d\n", y2true);
+    if (y2true>(GetScreenHeight()-offset)){
+        double m = (y2true-y1true)/(GetScreenWidth() - 2*offset);
+        double n = y1true - (m*offset);
+        trueXvalue = (GetScreenWidth()-offset-n)/m;
+        y2true = GetScreenHeight()-offset;
+        printf("trueXvalue: %lf\n", trueXvalue);
+    }
+            
     while (!WindowShouldClose()){
 
         BeginDrawing();
 
             DrawLine(50, GetScreenHeight()-50, GetScreenWidth()-50, GetScreenHeight()-50, BLACK);
             DrawLine(50, GetScreenHeight()-50, 50, 50, linecolor);
+            
             
 
             ClearBackground(RAYWHITE);
@@ -77,14 +94,14 @@ int drawing(double Xval[], double Yval[], int ValAmount, double *minmaxvalues, d
                 DrawText(drawValueX, xPos, GetScreenHeight()-45, 5, BLACK);
                 DrawText(drawValueY, 20, yPos, 5, BLACK);
             }
-           
+            
+            //Check, so dass der Graph nicht in den 4ten Quadranten geht
+            
            //  y =        m            *       x          +          n
-            int y1 = (((drawLineAverage[0]*minmaxvalues[3]) - minmaxvalues[3]) + drawLineAverage[1])*Ygetmaxtoratio;
-            int y2 = (((drawLineAverage[0]*minmaxvalues[1]) - minmaxvalues[3]) + drawLineAverage[1])*Ygetmaxtoratio;
-            double y1true = GetScreenHeight() - y1 - offset;
-            double y2true = GetScreenHeight() - y2 - offset;
+            
             //printf("\n y1true: %lf  +  y2true: %lf\n", y2true, y1true);
-            DrawLine(offset, y1true, (GetRenderWidth() - offset), y2true, GRAY);
+            
+            DrawLine(offset, y1true, trueXvalue, y2true, GRAY);
             
         EndDrawing();
     }

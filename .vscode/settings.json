@@ -6,6 +6,7 @@
         "stdlib.h": "c",
         "time.h": "c",
         "math.h": "c",
-        "corecrt_math.h": "c"
+        "corecrt_math.h": "c",
+        "stdbool.h": "c"
     }
 }
