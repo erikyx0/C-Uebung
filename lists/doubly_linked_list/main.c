@@ -15,14 +15,24 @@ typedef struct doublyList
     Node *tail;
 }DoublyList;
 
-void insert_at_head(DoublyList *structureElement, int value);
+Node *insert_at_head(DoublyList *structureElement, int value);
 
 int main(int argv, char *argc){
+    DoublyList list1;
+    list1.size = 0;
+    list1.head = NULL;
+    list1.tail = NULL;
 
     return 0;
 }
 
-void insert_at_head(DoublyList *structureElement, int value){
+Node *insert_at_head(DoublyList *structureElement, int value){
     Node *newNode = calloc(1, sizeof(Node));
-    if(structureElement->head == NULL) return
+    newNode->data = value;
+    if(structureElement->head == NULL){
+        structureElement->head = newNode;
+        structureElement->tail = newNode;
+        return newNode;
+    }
+    
 }

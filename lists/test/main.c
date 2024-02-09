@@ -29,9 +29,6 @@ int main(int argv, char *argc){
 }
 
 
-
-
-
 Node *free_list(Node *head){
     while(head != NULL){
         Node *buffer = head;
