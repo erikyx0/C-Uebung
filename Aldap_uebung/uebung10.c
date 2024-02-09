@@ -43,7 +43,7 @@ int main(void){
     students.head = s1;
     students.amount = 1;
     neuesEnde(students, "Tom", "Weckend", "08.06.1962", 12345, "Auto", 0);
-
+    
     student *s = students.head;
     for(int i=0; i<=students.amount; i++){
         ausgabeStudent(s);
