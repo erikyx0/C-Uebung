@@ -9,6 +9,7 @@ typedef struct blatt{
 Blatt *add_leaf(Blatt *head, int data);
 Blatt *free_tree(Blatt *head);
 void print_tree(Blatt *head);
+void print_layer(Blatt *head, int layer);
 
 int main(void){
     Blatt *tree;
@@ -19,6 +20,8 @@ int main(void){
     tree = add_leaf(tree, 4);
     tree = add_leaf(tree, 89);
     print_tree(tree);
+    printf("\n");
+    print_layer(tree, 0);
     return 0;
 }
 
@@ -68,4 +71,17 @@ Blatt *free_tree(Blatt *head){
         free(head);
     }
     return NULL;
+}
+
+void print_layer(Blatt *head, int layer){
+    if (head == NULL) {
+        return; 
+    if (layer == 0){
+        printf("%d ", head->data);
+    } else {
+        // Ansonsten rekursiv die linke und rechte Seite durchlaufen und die Layerzahl um eins verringern
+        print_layer(head->left, layer - 1);
+        print_layer(head->right, layer - 1);
+    }
+    }
 }
