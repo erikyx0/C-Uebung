@@ -36,11 +36,11 @@ Node *merge_sordet_lists_new(Node *list1, Node *list2);
 int main(){
     Node *list1_head = NULL, *list2_head = NULL;
 
-    //list1_head = insert_at_head(list1_head, 2);
-    //list1_head = insert_at_head(list1_head, 5);
-    //list1_head = insert_at_head(list1_head, 1);
-    //list1_head = insert_at_head(list1_head, -2);
-    //list1_head = insert_at_head(list1_head, 9);
+    list1_head = insert_at_head(list1_head, 2);
+    list1_head = insert_at_head(list1_head, 5);
+    list1_head = insert_at_head(list1_head, 1);
+    list1_head = insert_at_head(list1_head, -2);
+    list1_head = insert_at_head(list1_head, 9);
 
 
     //list2_head = insert_at_head(list2_head, 67);
