@@ -115,3 +115,5 @@ int main(int argc, char *argv[]){
     free(geratendeBS); free(posWord);
     return 0;
 }
+
+// Ben ist eine geile Sau
